@@ -1,4 +1,4 @@
-name: Dockerhub front
+name: CI
 
 on:
   
@@ -31,7 +31,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
           
 
-cd:
+name: CD
 
 env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
