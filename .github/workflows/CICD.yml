@@ -5,6 +5,8 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    env:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,9 +32,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
       - 
-    env:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
         name: Configure SSH
         uses: webfactory/ssh-agent@v0.4.0
         with:
