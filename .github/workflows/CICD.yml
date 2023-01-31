@@ -40,19 +40,23 @@ env:
 
   needs: ci
   steps:
-    - name: Checkout code
+    - 
+      name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Configure SSH
+    - 
+      name: Configure SSH
       uses: webfactory/ssh-agent@v0.4.0
       with:
         ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
 
-    - name: Stop and remove Docker container
+    - 
+      name: Stop and remove Docker container
       run: |
         ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker stop digitalocean_web_1"
         ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker rm digitalocean_web_1"
 
-    - name: Start Docker container
+    - 
+      name: Start Docker container
       run: |
         ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker run --name digitalocean_web_1 -d carrion14/frontend:latest"
