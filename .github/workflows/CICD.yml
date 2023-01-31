@@ -36,10 +36,10 @@ cd:
 env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
-    needs: ci
-    steps:
+  needs: ci
+  steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
