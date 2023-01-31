@@ -31,7 +31,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
       - 
         name: Configure SSH
-        uses: 
         uses: webfactory/ssh-agent@v0.4.0
         with:
           ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
