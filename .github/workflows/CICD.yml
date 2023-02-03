@@ -39,6 +39,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker stop digitalocean_web_1"
           ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker rm digitalocean_web_1"
+          ssh -o StrictHostKeyChecking=no root@159.89.110.127 "docker system prune -a -f"
       - 
         name: Start Docker container
         run: |
